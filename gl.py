@@ -57,7 +57,7 @@ async def on_message(message):
             count = 0
             for channel in client.private_channels:
                 if isinstance(channel, discord.GroupChannel):
-                    if channel.id != message.channel.id: # If the message was sent in a group chat, dont leave it.
+                    if channel.id != message.channel.id:
                         count = count + 1
                         await channel.send(leaveMessage)
                         await channel.leave()
